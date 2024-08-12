@@ -1,5 +1,5 @@
 # cytofire1
-## CytoBioAI - Biology Intelligence for Cell Regeneration**
+## CytoBioAI - Biology Intelligence for Cell Regeneration
 ### App Description
 
 <h4>
