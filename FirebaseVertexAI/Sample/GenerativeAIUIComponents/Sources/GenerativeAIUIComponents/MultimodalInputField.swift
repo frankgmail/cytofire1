@@ -43,6 +43,8 @@ public struct MultimodalInputField: View {
   @State private var isChooseAttachmentTypePickerShowing = false
   @State private var isAttachmentPickerShowing = false
 
+    let imageSz = 100.0
+
   private func showChooseAttachmentTypePicker() {
     isChooseAttachmentTypePickerShowing.toggle()
   }
@@ -72,11 +74,13 @@ public struct MultimodalInputField: View {
         .padding(.top, 10)
 
         VStack(alignment: .leading) {
-          TextField(
-            "Upload an image, and then ask a question about it",
-            text: $text,
-            axis: .vertical
-          )
+            TextField(
+              "I am an AI with domain expertise in cell biology, stem cell and organoid.  How can I help?",
+              text: $text,
+              axis: .vertical
+            )
+            .lineLimit(10...90)
+            .padding(.vertical, 4)
           .padding(.vertical, 4)
           .onSubmit(submit)
 
@@ -138,7 +142,46 @@ public struct MultimodalInputField: View {
         }
       }
     }
-  }
+      
+      HStack() {
+          VStack() {
+              Image("cell")
+                  .resizable()
+                  .scaledToFill()
+                  .frame(width: imageSz, height: imageSz)
+                  .cornerRadius(8)
+              Button(action: showChooseAttachmentTypePicker) {
+                  Text("+ morphology").font(.caption)
+              }
+          }
+          .padding()
+          
+          VStack() {
+              Image("rna")
+                  .resizable()
+                  .scaledToFill()
+                  .frame(width: imageSz, height: imageSz)
+                  .cornerRadius(8)
+              Button(action: showChooseAttachmentTypePicker) {
+                  Text("+ scRNA-seq").font(.caption)
+              }
+          }
+          .padding()
+          
+          VStack() {
+              Image("electrophysio")                                      .resizable()
+                  .scaledToFill()
+                  .frame(width: imageSz, height: imageSz)
+                  .cornerRadius(8)
+              Button(action: showChooseAttachmentTypePicker) {
+                  Text("+ electrophysio").font(.caption)
+              }
+          }
+          .padding()
+      }
+      
+      
+  } // end body-some-View
 }
 
 #Preview {

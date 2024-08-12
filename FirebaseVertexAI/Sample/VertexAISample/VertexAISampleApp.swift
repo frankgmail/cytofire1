@@ -27,12 +27,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     FirebaseApp.configure()
 
     if let firebaseApp = FirebaseApp.app(), firebaseApp.options.projectID == "mockproject-1234" {
-      guard let bundleID = Bundle.main.bundleIdentifier else { fatalError() }
-      fatalError("""
-      You must create and/or download a valid `GoogleService-Info.plist` file for \(bundleID) from \
-      https://console.firebase.google.com to run this sample. Replace the existing \
-      `GoogleService-Info.plist` file in the `FirebaseVertexAI/Sample` directory with this new file.
-      """)
+//      guard let bundleID = Bundle.main.bundleIdentifier else { fatalError() }
+//      fatalError("""
+//      You must create and/or download a valid `GoogleService-Info.plist` file for \(bundleID) from \
+//      https://console.firebase.google.com to run this sample. Replace the existing \
+//      `GoogleService-Info.plist` file in the `FirebaseVertexAI/Sample` directory with this new file.
+//      """)
     }
 
     return true

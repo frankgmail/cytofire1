@@ -21,34 +21,72 @@ struct ContentView: View {
   @StateObject
   var functionCallingViewModel = FunctionCallingViewModel()
 
-  var body: some View {
-    NavigationStack {
-      List {
-        NavigationLink {
-          SummarizeScreen()
-        } label: {
-          Label("Text", systemImage: "doc.text")
-        }
-        NavigationLink {
-          PhotoReasoningScreen()
-        } label: {
-          Label("Multi-modal", systemImage: "doc.richtext")
-        }
-        NavigationLink {
-          ConversationScreen()
-            .environmentObject(viewModel)
-        } label: {
-          Label("Chat", systemImage: "ellipsis.message.fill")
-        }
-        NavigationLink {
-          FunctionCallingScreen().environmentObject(functionCallingViewModel)
-        } label: {
-          Label("Function Calling", systemImage: "function")
-        }
-      }
-      .navigationTitle("Generative AI Samples")
+    var body: some View {
+        
+        NavigationStack {
+            VStack(alignment: .center) {
+                Image("iconAI")
+            }
+            .padding()
+            
+            List {
+
+                NavigationLink {
+                    PhotoReasoningScreen()
+                } label: {
+                    Label(" Cardio Intelligence", systemImage: "heart.circle")
+                        .font(.largeTitle)
+                }
+                
+                NavigationLink {
+                    PhotoReasoningScreen()
+                } label: {
+                    Label(" Cardiovascular Theraputics", systemImage: "cross.vial")
+                        .font(.largeTitle)
+                }
+                NavigationLink {
+                    FunctionCallingScreen().environmentObject(functionCallingViewModel)
+                } label: {
+                    Label(" Electro Physiology", systemImage: "waveform.path.ecg.rectangle")
+                        .font(.largeTitle)
+                }
+                
+                NavigationLink {
+                    ConversationScreen()
+                        .environmentObject(viewModel)
+                } label: {
+                    Label(" Cell Biology", systemImage: "atom")
+                        .font(.largeTitle)
+                }
+                NavigationLink {
+                    SummarizeScreen()
+                } label: {
+                    Label(" Stem Cell Protocols", systemImage: "microbe")
+                        .font(.largeTitle)
+                }
+                NavigationLink {
+                    FunctionCallingScreen().environmentObject(functionCallingViewModel)
+                } label: {
+                    Label(" Regenerative Medicine", systemImage: "syringe")
+                        .font(.largeTitle)
+                }
+                NavigationLink {
+                    FunctionCallingScreen().environmentObject(functionCallingViewModel)
+                } label: {
+                    Label(" Neural Therapeutics", systemImage: "brain.head.profile")
+                        .font(.largeTitle)
+                }
+                NavigationLink {
+                    FunctionCallingScreen().environmentObject(functionCallingViewModel)
+                } label: {
+                    Label(" Cardio Therapeutics", systemImage: "heart.circle")
+                        .font(.largeTitle)
+                }
+            } // end List
+            .navigationTitle("CytoBio AI")
+                
+        } // End NavigationStack
     }
-  }
 }
 
 #Preview {

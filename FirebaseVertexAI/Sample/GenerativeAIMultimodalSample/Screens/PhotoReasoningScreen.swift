@@ -54,7 +54,7 @@ struct PhotoReasoningScreen: View {
         .listStyle(.plain)
       }
     }
-    .navigationTitle("Multimodal sample")
+    .navigationTitle("Cardio Intelligence")
     .onAppear {
       focusedField = .message
     }
